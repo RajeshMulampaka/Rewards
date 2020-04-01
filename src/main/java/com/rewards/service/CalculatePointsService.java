@@ -49,8 +49,8 @@ public class CalculatePointsService {
 				if(cust.isPresent()) {
 					Customer custPresent = cust.get();
 					p = new Points(Long.valueOf(calculatedPoints), trans.getTransDate(), custPresent, trans);
+					pointsRepo.save(p);
 				}
-				pointsRepo.save(p);
 				
 				log.info(trans.toString() + "CalcPoints:" + calculatedPoints);
 			}
